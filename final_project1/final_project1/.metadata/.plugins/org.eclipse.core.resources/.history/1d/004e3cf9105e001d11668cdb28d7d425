@@ -1,0 +1,48 @@
+/*
+ * MC1.h
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: omark
+ */
+
+#ifndef SOURCE_MC1_MC1_H_
+#define SOURCE_MC1_MC1_H_
+
+#include "../HAL_layer/keypad/keypad.h"
+#include "../HAL_layer/LCD/lcd.h"
+#include "../MCAL_layer/TIMER/Timer1.h"
+#include "../MCAL_layer/UART/uart.h"
+#include "util/delay.h"
+#include "avr/interrupt.h"
+
+typedef enum{
+	failed_to_save,succeeded_to_save,wrong_password,right_password // commands sent by Control_ecu to give ack
+}errors;
+
+typedef enum {
+	Check_this_password,save_new_pass,open,Buzzer_ON,Buzzer_OFF  // commands sent by HMI_ecu to give orders to Control_ecu
+}orders_from_HMI_ECU;
+
+
+
+
+void Create_system_password(uint8 pass[], uint8 repass[]);
+
+errors Check_created_password(uint8 pass[], uint8 repass[]);
+
+errors verify_password(uint8 pass[]);
+
+void count_18sec();
+
+void count_15sec();
+
+void count_60sec();
+
+void delay_timer1(uint8 sec);
+
+uint8 Main_options();
+
+void Open_door(uint8 pass[]);
+
+void Change_password(uint8 pass[],uint8 repass[]);
+#endif /* SOURCE_MC1_MC1_H_ */

@@ -1,0 +1,73 @@
+23:18:30 **** Incremental Build of configuration Debug for project final_project_MC2 ****
+make all 
+Building file: ../src/MCAL_layer/UART/UART.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"src/MCAL_layer/UART/UART.d" -MT"src/MCAL_layer/UART/UART.o" -c -o "src/MCAL_layer/UART/UART.o" "../src/MCAL_layer/UART/UART.c"
+Finished building: ../src/MCAL_layer/UART/UART.c
+ 
+Building file: ../src/MCAL_layer/TWI/TWI.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"src/MCAL_layer/TWI/TWI.d" -MT"src/MCAL_layer/TWI/TWI.o" -c -o "src/MCAL_layer/TWI/TWI.o" "../src/MCAL_layer/TWI/TWI.c"
+Finished building: ../src/MCAL_layer/TWI/TWI.c
+ 
+Building file: ../src/MCAL_layer/TIMER/Timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"src/MCAL_layer/TIMER/Timer.d" -MT"src/MCAL_layer/TIMER/Timer.o" -c -o "src/MCAL_layer/TIMER/Timer.o" "../src/MCAL_layer/TIMER/Timer.c"
+../src/MCAL_layer/TIMER/Timer.c: In function 'Timer1_setCallBack':
+../src/MCAL_layer/TIMER/Timer.c:52: warning: function return types not compatible due to 'volatile'
+Finished building: ../src/MCAL_layer/TIMER/Timer.c
+ 
+Building file: ../src/MCAL_layer/PWM/PWM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"src/MCAL_layer/PWM/PWM.d" -MT"src/MCAL_layer/PWM/PWM.o" -c -o "src/MCAL_layer/PWM/PWM.o" "../src/MCAL_layer/PWM/PWM.c"
+Finished building: ../src/MCAL_layer/PWM/PWM.c
+ 
+Building file: ../src/HAL_layer/motor/DcMotor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"src/HAL_layer/motor/DcMotor.d" -MT"src/HAL_layer/motor/DcMotor.o" -c -o "src/HAL_layer/motor/DcMotor.o" "../src/HAL_layer/motor/DcMotor.c"
+Finished building: ../src/HAL_layer/motor/DcMotor.c
+ 
+Building file: ../src/HAL_layer/ext_eeprom/external_eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"src/HAL_layer/ext_eeprom/external_eeprom.d" -MT"src/HAL_layer/ext_eeprom/external_eeprom.o" -c -o "src/HAL_layer/ext_eeprom/external_eeprom.o" "../src/HAL_layer/ext_eeprom/external_eeprom.c"
+Finished building: ../src/HAL_layer/ext_eeprom/external_eeprom.c
+ 
+Building file: ../src/HAL_layer/buzzer/buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"src/HAL_layer/buzzer/buzzer.d" -MT"src/HAL_layer/buzzer/buzzer.o" -c -o "src/HAL_layer/buzzer/buzzer.o" "../src/HAL_layer/buzzer/buzzer.c"
+Finished building: ../src/HAL_layer/buzzer/buzzer.c
+ 
+Building file: ../Control_ECU_App.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Control_ECU_App.d" -MT"Control_ECU_App.o" -c -o "Control_ECU_App.o" "../Control_ECU_App.c"
+In file included from ../Control_ECU_App.c:16:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Control_ECU_App.c
+ 
+Building target: final_project_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,final_project_MC2.map -mmcu=atmega32 -o "final_project_MC2.elf"  ./src/MCAL_layer/gpio/gpio.o  ./src/MCAL_layer/UART/UART.o  ./src/MCAL_layer/TWI/TWI.o  ./src/MCAL_layer/TIMER/Timer.o  ./src/MCAL_layer/PWM/PWM.o  ./src/HAL_layer/motor/DcMotor.o  ./src/HAL_layer/ext_eeprom/external_eeprom.o  ./src/HAL_layer/buzzer/buzzer.o  ./Control_ECU_App.o   
+Finished building target: final_project_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S final_project_MC2.elf  >"final_project_MC2.lss"
+Finished building: final_project_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 final_project_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8380 bytes (25.6% Full)
+(.text + .data + .bootloader)
+
+Data:         44 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:18:33 Build Finished. 0 errors, 2 warnings. (took 2s.991ms)
+

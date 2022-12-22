@@ -1,0 +1,68 @@
+/******************************************************************************
+*  File name:		MC1.h
+*  Author:			Omar Khalid
+*******************************************************************************/
+
+#ifndef SOURCE_MC1_MC1_H_
+#define SOURCE_MC1_MC1_H_
+
+/**********************************************************
+ **                      inclusions                      **
+ **********************************************************/
+#include "../HAL_layer/keypad/keypad.h"
+#include "../HAL_layer/LCD/lcd.h"
+#include "../../MCAL_layer/TIMER/timer.h"
+#include "../../MCAL_layer/UART/uart.h"
+#include "util/delay.h"
+#include "avr/interrupt.h"
+
+
+
+/*******************************************************************************
+ **                        		UART MESSAGES                                 **
+ *******************************************************************************/
+#define MC_Ready					0xFC /* Message to indicate if the MCU is ready or not */
+#define MSG_UpdatePassword			0x99 /* Message From MCU1 to MCU2 to inform it that it will send new password and replace the one you have with it */
+#define MSG_TurnOnAlarm				0x88 /* Message From MCU1 to MCU2 to inform it the user entered the password wrong for 3 times, turn on the alarm */
+#define MSG_checkPassword			0x77 /* Message From MCU1 to MCU2 to inform it that it will send password from keypad to get checked */
+#define MSG_Motor					0x20 /* Message From MCU1 to MCU2 to inform it the user entered the password right, open the door */
+#define MSG_Matched					0xF0 /* Message From MCU2 to MCU1 to inform it if the passwords match or not */
+#define MSG_UnMatched				0x0F /* Message From MCU2 to MCU1 to inform it if the passwords match or not */
+
+
+
+/**********************************************************
+ **                      definitions                     **
+ **********************************************************/
+
+#define TIMER1_OCR1A				8000 	/* as we need TCNT1 to be 8000 so we can get interrupt every 1 sec */
+#define KEYPAD_BUTTON_DELAY			500 	/* the amount of delay the keypad need to get another input from the user */
+#define PASSWORD_SIZE				5 		/* password array size */
+#define Password_Address			0x350 	/* Password Location in the EEPROM */
+#define	Password_Is_Set_Address		0x320 	/* Password flag Location in the EEPROM */
+#define PasswordSET					0xC2 	/* To indicate whether the password is set or not */
+#define ALLOWED_TRIES				3 		/* allow only 3 tries to enter the password right */
+#define ENTER_KEY					13		/* 13 is the "ON/C" button on the keypad */
+
+
+
+/*********************************************************
+ **                  Functions Prototypes	            **
+ *********************************************************/
+void APP_setPassword(void);
+void APP_changePassword(void);
+uint8 APP_compare(void);
+void APP_alarm(void);
+void APP_door(void);
+
+/********************************************************
+ *                   INTERRUPT SERVICE 	               **
+ ********************************************************/
+void TIMER1_MOTOR_3SEC_ISR(void);
+void TIMER1_MOTOR_15SEC_ISR(void);
+void TIMER1_ALARM_ISR(void);
+
+
+
+
+#endif /* SOURCE_MC1_MC1_H_ */

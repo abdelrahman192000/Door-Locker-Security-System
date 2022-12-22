@@ -1,0 +1,19 @@
+/*
+ * MC1.c
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: omark
+ */
+#include "MC1.h"
+
+void APP_setPassword(void);
+void APP_changePassword(void);
+uint8 APP_comparePassWithEEPROM(void);
+void APP_alarm(void);
+void APP_door(void);
+
+
+void TIMER1_MOTOR_3SEC_ISR(void);
+void TIMER1_MOTOR_15SEC_ISR(void);
+void TIMER1_ALARM_ISR(void);
+

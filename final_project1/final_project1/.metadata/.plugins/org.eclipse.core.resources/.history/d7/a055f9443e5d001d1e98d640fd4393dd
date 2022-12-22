@@ -1,0 +1,41 @@
+
+#ifndef SOURCE_MC1_MC1_H_
+#define SOURCE_MC1_MC1_H_
+
+/**********************************************************
+ **                      inclusions                      **
+ **********************************************************/
+#include "../HAL_layer/keypad/keypad.h"
+#include "../HAL_layer/LCD/lcd.h"
+#include "../../MCAL_layer/timer/timer.h"
+#include "../../MCAL_layer/uart/uart.h"
+#include "util/delay.h"
+#include "avr/interrupt.h"
+
+
+
+/**********************************************************
+ **                      definitions                     **
+ **********************************************************/
+
+
+/*********************************************************
+ **                  Functions Prototypes	            **
+ *********************************************************/
+void APP_setPassword(void);
+void APP_changePassword(void);
+uint8 APP_comparePassWithEEPROM(void);
+void APP_alarm(void);
+void APP_door(void);
+
+/********************************************************
+ *                   INTERRUPT SERVICE 	               **
+ ********************************************************/
+void TIMER1_MOTOR_3SEC_ISR(void);
+void TIMER1_MOTOR_15SEC_ISR(void);
+void TIMER1_ALARM_ISR(void);
+
+
+
+
+#endif /* SOURCE_MC1_MC1_H_ */

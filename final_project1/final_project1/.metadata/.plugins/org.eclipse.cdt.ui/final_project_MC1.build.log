@@ -1,0 +1,69 @@
+23:18:27 **** Incremental Build of configuration Debug for project final_project_MC1 ****
+make all 
+Building file: ../source/MCAL_layer/gpio/gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"source/MCAL_layer/gpio/gpio.d" -MT"source/MCAL_layer/gpio/gpio.o" -c -o "source/MCAL_layer/gpio/gpio.o" "../source/MCAL_layer/gpio/gpio.c"
+Finished building: ../source/MCAL_layer/gpio/gpio.c
+ 
+Building file: ../source/MCAL_layer/UART/UART.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"source/MCAL_layer/UART/UART.d" -MT"source/MCAL_layer/UART/UART.o" -c -o "source/MCAL_layer/UART/UART.o" "../source/MCAL_layer/UART/UART.c"
+Finished building: ../source/MCAL_layer/UART/UART.c
+ 
+Building file: ../source/MCAL_layer/TIMER/Timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"source/MCAL_layer/TIMER/Timer.d" -MT"source/MCAL_layer/TIMER/Timer.o" -c -o "source/MCAL_layer/TIMER/Timer.o" "../source/MCAL_layer/TIMER/Timer.c"
+../source/MCAL_layer/TIMER/Timer.c: In function 'Timer1_setCallBack':
+../source/MCAL_layer/TIMER/Timer.c:52: warning: function return types not compatible due to 'volatile'
+Finished building: ../source/MCAL_layer/TIMER/Timer.c
+ 
+Building file: ../source/HAL_layer/keypad/keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"source/HAL_layer/keypad/keypad.d" -MT"source/HAL_layer/keypad/keypad.o" -c -o "source/HAL_layer/keypad/keypad.o" "../source/HAL_layer/keypad/keypad.c"
+In file included from ../source/HAL_layer/keypad/keypad.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../source/HAL_layer/keypad/keypad.c
+ 
+Building file: ../source/HAL_layer/LCD/LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"source/HAL_layer/LCD/LCD.d" -MT"source/HAL_layer/LCD/LCD.o" -c -o "source/HAL_layer/LCD/LCD.o" "../source/HAL_layer/LCD/LCD.c"
+In file included from ../source/HAL_layer/LCD/LCD.c:16:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../source/HAL_layer/LCD/LCD.c: In function 'LCD_intgerToString':
+../source/HAL_layer/LCD/LCD.c:210: warning: implicit declaration of function 'itoa'
+Finished building: ../source/HAL_layer/LCD/LCD.c
+ 
+Building file: ../HMI_ECU_App.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HMI_ECU_App.d" -MT"HMI_ECU_App.o" -c -o "HMI_ECU_App.o" "../HMI_ECU_App.c"
+In file included from ../HMI_ECU_App.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HMI_ECU_App.c
+ 
+Building target: final_project_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,final_project_MC1.map -mmcu=atmega32 -o "final_project_MC1.elf"  ./source/MCAL_layer/gpio/gpio.o  ./source/MCAL_layer/UART/UART.o  ./source/MCAL_layer/TIMER/Timer.o  ./source/HAL_layer/keypad/keypad.o  ./source/HAL_layer/LCD/LCD.o  ./HMI_ECU_App.o   
+Finished building target: final_project_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S final_project_MC1.elf  >"final_project_MC1.lss"
+Finished building: final_project_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 final_project_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   20770 bytes (63.4% Full)
+(.text + .data + .bootloader)
+
+Data:        187 bytes (9.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:18:29 Build Finished. 0 errors, 5 warnings. (took 2s.394ms)
+

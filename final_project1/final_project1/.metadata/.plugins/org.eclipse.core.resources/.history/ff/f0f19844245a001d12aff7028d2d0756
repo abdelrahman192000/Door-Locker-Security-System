@@ -1,0 +1,23 @@
+/*
+ * buzzer.h
+ *
+ *  Created on: Nov 1, 2022
+ *      Author: omark
+ */
+
+#ifndef SOURCE_BUZZER_BUZZER_H_
+#define SOURCE_BUZZER_BUZZER_H_
+
+#include <gpio.c>
+
+
+#define buzzer_port    PORTA_ID
+#define buzzer_pin     PIN0_ID
+
+void Buzzer_init();
+
+void Buzzer_on(void);
+
+void Buzzer_off(void);
+
+#endif /* SOURCE_BUZZER_BUZZER_H_ */

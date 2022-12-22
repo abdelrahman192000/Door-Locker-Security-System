@@ -1,0 +1,24 @@
+/******************************************************************************
+*  File name:		buzzer.c
+*  Author:			Omar Khalid
+*******************************************************************************/
+
+/*******************************************************************************
+ *                        		Inclusions                                     *
+ *******************************************************************************/
+#include "buzzer.h"
+
+void BUZZER_init(void)
+{
+	GPIO_setupPinDirection(buzzer_port, buzzer_pin, PIN_OUTPUT);
+}
+
+void BUZZER_on(void)
+{
+	GPIO_writePin(buzzer_port, buzzer_pin, LOGIC_HIGH);
+}
+
+void BUZZER_off(void)
+{
+	GPIO_writePin(buzzer_port, buzzer_pin, LOGIC_LOW);
+}

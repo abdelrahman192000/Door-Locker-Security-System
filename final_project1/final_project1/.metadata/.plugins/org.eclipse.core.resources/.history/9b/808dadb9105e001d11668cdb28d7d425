@@ -1,0 +1,42 @@
+
+#include "source/MC1/MC1.h"
+#include "util/delay.h"
+#include "avr/io.h"
+
+ uint8 pass[5], repass[5],count=0;
+int main(){
+
+	SREG|=(1<<7);
+	LCD_init();
+	UART_config config={eight,disabled,one_bit,9600};
+	UART_init(&config);
+	errors status;
+	do{
+		Create_system_password(pass, repass);
+		status = Check_created_password(pass, repass);
+		if (status == failed_to_save){
+			LCD_displayString("Not Matched");
+			_delay_ms(1500);
+			LCD_clearScreen();
+		}
+	}while(status== failed_to_save);
+
+
+	while(1){
+
+		uint8 choice;
+		choice = Main_options();
+		switch (choice){
+		case '+':
+			Open_door(pass);
+			break;
+
+		case '-':
+			Change_password(pass,repass);
+			break;
+		}
+
+	}
+
+
+}

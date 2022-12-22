@@ -1,0 +1,57 @@
+/******************************************************************************
+*  File name:		dc_motor.h
+*  Author:			Omar Khalid
+*******************************************************************************/
+
+
+#ifndef DC_MOTOR_H_
+#define DC_MOTOR_H_
+
+#include "../../MCAL_layer/gpio/gpio.h"
+
+
+
+
+/*******definitions*******/
+
+typedef enum  DcMotor_State
+{
+	  STATE_OFF,
+	  STATE_ON
+} DcMotor_State;
+
+
+
+#define DC_IN_1_PORT PORTB_ID
+#define DC_IN_1_PIN  PIN0_ID
+
+#define DC_IN_2_PORT PORTB_ID
+#define DC_IN_2_PIN  PIN1_ID
+
+#define DC_SPEED_CONTROLL_PORT PORTB_ID
+#define DC_SPEED_CONTROLL_PIN  PIN3_ID
+
+
+
+#define DC_DIRECTION 0 //clock wise
+//anti clock wise -> value = 1
+//clock wise -> value = 0
+
+
+
+
+
+
+
+
+
+
+/***********function definitions************/
+void DcMotor_Init (void);// fun to set motor direction and start up setting
+
+void DcMotor_Rotate (DcMotor_State state,uint8 speed);//fun to take state of motor with its speed
+
+
+
+
+#endif /* DC_MOTOR_H_ */

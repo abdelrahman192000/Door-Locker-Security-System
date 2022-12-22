@@ -1,0 +1,52 @@
+/*
+ * MC1.c
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: omark
+ */
+#include "MC1.h"
+
+
+
+
+Timer1_ConfigType TIMER1_Configuration = {0,TIMER1_OCR1A,TIMER1_FCPU_1024,COMPARE};
+void APP_setPassword(void)
+{
+	LCD_clearScreen();
+	LCD_displayString("Set New Password");
+	_delay_ms(1000);
+	LCD_clearScreen();
+	UART_sendByte(MSG_UpdatePassword); /* Inform MCU2 that it will receive new password to set it in the eeprom */
+
+}
+void APP_changePassword(void)
+{
+
+}
+uint8 APP_comparePassWithEEPROM(void)
+{
+
+}
+void APP_alarm(void)
+{
+
+}
+void APP_door(void)
+{
+
+}
+
+
+void TIMER1_MOTOR_3SEC_ISR(void)
+{
+
+}
+void TIMER1_MOTOR_15SEC_ISR(void)
+{
+
+}
+void TIMER1_ALARM_ISR(void)
+{
+
+}
+
